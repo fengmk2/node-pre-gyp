@@ -1,7 +1,7 @@
 {
-  "name": "node-pre-gyp",
+  "name": "node-pre-gyp-qn",
   "description": "Node.js native addon binary install tool",
-  "version" : "0.6.2",
+  "version" : "0.6.3",
   "keywords": [
     "native",
     "addon",
@@ -17,7 +17,9 @@
     "type": "git",
     "url": "git://github.com/mapbox/node-pre-gyp.git"
   },
-  "bin": "./bin/node-pre-gyp",
+  "bin": {
+    "node-pre-gyp": "./bin/node-pre-gyp"
+  },
   "main": "./lib/node-pre-gyp.js",
   "dependencies": {
     "nopt": "~3.0.1",
@@ -43,6 +45,7 @@
   ],
   "devDependencies": {
     "aws-sdk":"*",
+    "qn": "*",
     "mocha": "1.x",
     "retire": "0.3.x",
     "jshint": "^2.5.10"
@@ -60,7 +63,6 @@
     "node": ">= 0.8.0"
   },
   "scripts": {
-    "prepublish":"retire -n && npm ls && jshint test/*.js lib/*.js lib/util/*.js scripts/*js bin/node-pre-gyp",
     "update-crosswalk":"node scripts/abi_crosswalk.js",
     "test":"mocha -R spec --timeout 100000"
   }
