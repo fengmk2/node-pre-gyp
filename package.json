@@ -23,13 +23,13 @@
   "main": "./lib/node-pre-gyp.js",
   "dependencies": {
     "nopt": "~3.0.1",
-    "npmlog": "~0.1.1",
+    "npmlog": "~1.1.0",
     "request": "2.x",
-    "semver": "~4.2.0",
+    "semver": "~4.3.0",
     "tar": "~1.0.2",
     "tar-pack":"~2.0.0",
     "mkdirp":"~0.5.0",
-    "rc":"~0.5.1",
+    "rc":"~0.6.0",
     "rimraf":"~2.2.8"
   },
   "bundledDependencies":[
@@ -64,6 +64,6 @@
   },
   "scripts": {
     "update-crosswalk":"node scripts/abi_crosswalk.js",
-    "test":"mocha -R spec --timeout 100000"
+    "test":"jshint lib lib/util scripts bin/node-pre-gyp && mocha -R spec --timeout 500000"
   }
 }
